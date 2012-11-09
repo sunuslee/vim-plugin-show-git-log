@@ -13,6 +13,7 @@
 
 function! ShowGitLog(method)
     let current_editing=expand('%:p')
+    lcd %:p:h
     let cmd="git log -p ".current_editing
     let log=system(cmd)
     if len(log) < 220
